@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <!--  layout_constraintLeft_toLeftOf   都是对齐的意思，拉升与压缩-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我在父控件左边顶部我在父控件左边顶部"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/top"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我与上面控件左对齐"
+        app:layout_constraintTop_toBottomOf="@id/top"
+        app:layout_constraintLeft_toLeftOf="@id/top"
+        android:layout_marginTop="20dp"
+        android:id="@+id/second"/>
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:text="右对齐"
+        app:layout_constraintTop_toBottomOf="@id/second"
+        app:layout_constraintRight_toRightOf="@id/second"
+        android:layout_marginTop="20dp"
+        android:background="#ff0000"
+        android:id="@+id/third"/>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#00ff00"
+        android:text="ddd"
+        app:layout_constraintLeft_toRightOf="@id/third"
+        app:layout_constraintBottom_toBottomOf="@id/third"/>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#00ff00"
+        android:text="ddd"
+        app:layout_constraintLeft_toRightOf="@id/third"
+        app:layout_constraintTop_toTopOf="@id/third"
+        android:layout_marginLeft="20dp"/>
+
+
+</android.support.constraint.ConstraintLayout>
