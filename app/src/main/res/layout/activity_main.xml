@@ -31,18 +31,20 @@
         android:text="me"
         app:layout_constraintLeft_toRightOf="@id/top_left"
         app:layout_constraintRight_toLeftOf="@id/top_right"
-        app:layout_constraintHorizontal_bias="1.0"/>
+        app:layout_constraintHorizontal_bias="1.0"
+        android:id="@+id/me"/>
 
 
     <Button
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:text="中心"
+        android:text="中心(点击进入下一个界面)"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="#ff0000"
+        android:onClick="secondActivity"
         android:id="@+id/center"/>
 
     <!-- layout_constraintBottom_toTopOf  本身控件的底部与center控件的上边对齐，
@@ -58,5 +60,93 @@
         app:layout_constraintTop_toTopOf="@id/center"
         android:background="#00ff00"/>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1111111"
+        android:textSize="50sp"
+        android:textColor="#ff0000"
+        android:layout_marginTop="10dp"
+        android:background="#00ff00"
+        app:layout_constraintTop_toBottomOf="@id/center"
+        android:id="@+id/one"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22222"
+        android:textSize="20sp"
+        android:textColor="#ff0000"
+        android:background="#0000ff"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/one"
+        app:layout_constraintLeft_toRightOf="@id/one"/>
+
+
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView1"
+        android:textSize="20sp"
+        android:textColor="#ff0000"
+        app:layout_constraintTop_toBottomOf="@id/one"/>
+
+    <!--  指的是TextView2的中心在TextView1的中心的120度，距离为150dp，效果如下 -->
+    <TextView
+        android:id="@+id/TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView2"
+        app:layout_constraintCircle="@+id/TextView1"
+        app:layout_constraintCircleAngle="120"
+        app:layout_constraintCircleRadius="150dp" />
+
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView3"
+        android:textColor="#ff0000"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test gone margin"
+        android:textColor="#ff0000"
+        app:layout_constraintLeft_toRightOf="@id/tv3"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv3"
+        android:layout_marginLeft="10dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="在me底下，离开左边100dp后居中"
+        android:textColor="#ff0000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/me"
+        android:layout_marginLeft="100dp"
+        android:id="@+id/test_margin_after_center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="test bias"
+        android:textColor="#ff0000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/test_margin_after_center"
+        app:layout_constraintHorizontal_bias="0.3"/>
 
 </android.support.constraint.ConstraintLayout>
